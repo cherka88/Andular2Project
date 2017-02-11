@@ -28,7 +28,7 @@
 						<div class="view">
 							<input class="toggle" type="checkbox"  [(ngModel)]="item.isDone">
 							<!--<label>Taste JavaScript</label>-->
-              <label>{{item.value}}</label>
+              <label>{{item.value|uppercase}}</label>
 							<button class="destroy"></button>
 						</div>
 						<input class="edit" value="Create a TodoMVC template">
