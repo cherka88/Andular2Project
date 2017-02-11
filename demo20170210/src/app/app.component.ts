@@ -10,10 +10,11 @@ export class AppComponent {
   todos:any[] = [];
   todo:string;
   add(item:HTMLInputElement){
-    this.todos.push({
-      value: item.value,
-      isDone: false
-    });
+    // this.todos.push({
+    //   value: item.value,
+    //   isDone: false
+    // });
+    this.todos = [...this.todos,{value:item.value, isDone:false}];
     item.value = '';
   }
   clearCompleted(){
