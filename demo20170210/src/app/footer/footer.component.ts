@@ -8,7 +8,7 @@ import { Component, OnInit, Input,Output,EventEmitter } from '@angular/core';
 export class FooterComponent implements OnInit {
 
   constructor() { }
-
+  filter_type: string = 'All';
   ngOnInit() {
   }
   get itemNonComplete(){
