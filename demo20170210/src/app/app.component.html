@@ -40,7 +40,7 @@
 			<app-footer [todos]="todos" #myFooter (clearCompleted)="clearCompleted()"></app-footer>
 		</section>
 		<footer class="info">
-      <button (click)="save()">儲存清單到 JSONBin</button>
+      <button (click)="datasvc.save(todos)">儲存清單到 JSONBin</button>
 			<p>Double-click to edit a todo</p>
 			<!-- Remove the below line ↓ -->
 			<p>Template by <a href="http://sindresorhus.com">Sindre Sorhus</a></p>
