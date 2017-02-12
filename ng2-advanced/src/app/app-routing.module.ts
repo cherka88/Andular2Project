@@ -12,7 +12,7 @@ import { FallbackRoute } from './shared/fallback-route'
 const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'cards/:type', component:CardsComponent},
-  { path: 'charts', children:[
+  { path: 'charts/:username', children:[
       { path:'', redirectTo:'flot',pathMatch:'full'},
       { path:'flot', component: FlotComponent},
       { path:'radial', component: RadialComponent},
@@ -23,7 +23,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes,{enableTracing:true})],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
   providers: []
 })
