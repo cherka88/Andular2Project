@@ -1,3 +1,4 @@
+import { ChartsModule } from './charts/charts.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -9,9 +10,7 @@ import { LayoutComponent } from './layout/layout.component';
 import { Page2Component } from './page2/page2.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CardsComponent } from './cards/cards.component';
-import { FlotComponent } from './flot/flot.component';
-import { RadialComponent } from './radial/radial.component';
-import { RickshawComponent } from './rickshaw/rickshaw.component';
+
 
 @NgModule({
   declarations: [
@@ -19,15 +18,13 @@ import { RickshawComponent } from './rickshaw/rickshaw.component';
     LayoutComponent,
     Page2Component,
     DashboardComponent,
-    CardsComponent,
-    FlotComponent,
-    RadialComponent,
-    RickshawComponent
+    CardsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
+    ChartsModule, //注意順序
     AppRoutingModule
   ],
   providers: [],

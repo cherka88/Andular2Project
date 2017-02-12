@@ -12,13 +12,6 @@ import { FallbackRoute } from './shared/fallback-route'
 const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'cards/:type', component:CardsComponent},
-  { path: 'charts/:username', children:[
-      { path:'', redirectTo:'flot',pathMatch:'full'},
-      { path:'flot', component: FlotComponent},
-      { path:'radial', component: RadialComponent},
-      { path:'rickshaw', component: RickshawComponent}
-    ]
-  },
   FallbackRoute
 ];
 
