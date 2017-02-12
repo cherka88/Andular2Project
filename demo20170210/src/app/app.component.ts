@@ -16,7 +16,7 @@ export class AppComponent {
   }
   ngOnInit(){
       this.datasvc.load().subscribe(values => {
-              this.todos = values;
+          this.todos = values; //如果一開始todos存入空資料，後續add會掛
     });
   }
 
