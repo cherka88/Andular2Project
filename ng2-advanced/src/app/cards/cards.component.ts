@@ -25,4 +25,20 @@ export class CardsComponent implements OnInit {
     this.router.navigateByUrl('/cards/'+type);
   }
 
+  // 13 練習兩種不同的可選參數用法 (Optional Parameters)
+  goQueryString() {
+    this.router.navigate(['/cards', 100], {
+      queryParams: {
+        name: 'QueryString1'
+      }
+    })
+  }
+
+  goMatrix() {
+    this.router.navigate(['/cards', 100, {
+        name: 'Matrix',
+      }]);
+  }
+
+
 }
