@@ -5,13 +5,13 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
-  { path: 'charts/:username', children:[
+
       { path:'', redirectTo:'flot',pathMatch:'full'},
       { path:'flot', component: FlotComponent},
       { path:'radial', component: RadialComponent},
       { path:'rickshaw', component: RickshawComponent}
-    ]
-  }
+
+
 ];
 
 @NgModule({

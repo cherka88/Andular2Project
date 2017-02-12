@@ -1,4 +1,3 @@
-import { ChartsModule } from './charts/charts.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -24,7 +23,6 @@ import { CardsComponent } from './cards/cards.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    ChartsModule, //注意順序
     AppRoutingModule
   ],
   providers: [],

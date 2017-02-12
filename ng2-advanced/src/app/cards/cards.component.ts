@@ -12,12 +12,12 @@ export class CardsComponent implements OnInit {
 
   ngOnInit() {
     // this.type=this.route.snapshot.params['type'];
-    this.route.params.subscribe(params=>{
+    this.route.params.subscribe( params=>{
       this.type = params['type'];
       console.log(params['name']);
     });
 
-    this.route.queryParams.subscribe(params=>{
+    this.route.queryParams.subscribe( params=>{
       console.log(params['name']);
     })
   }
