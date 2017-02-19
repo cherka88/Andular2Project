@@ -12,6 +12,7 @@ import { CardsComponent } from './cards/cards.component';
 import { FormComponent } from './form/form.component';
 import { ReactiveformComponent } from './reactiveform/reactiveform.component';
 import { SkyComponent } from './sky/sky.component';
+import { ApplyCounterDirective } from './apply-counter.directive';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { SkyComponent } from './sky/sky.component';
     CardsComponent,
     FormComponent,
     ReactiveformComponent,
-    SkyComponent
+    SkyComponent,
+    ApplyCounterDirective
   ],
   imports: [
     BrowserModule,
