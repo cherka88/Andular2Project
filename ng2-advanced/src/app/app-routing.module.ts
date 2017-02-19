@@ -1,3 +1,4 @@
+import { ReactiveformComponent } from './reactiveform/reactiveform.component';
 import { FormComponent } from './form/form.component';
 import { CardsComponent } from './cards/cards.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'cards/:type', component: CardsComponent },
   { path: 'charts/:username', loadChildren:'./charts/charts.module.ts#ChartsModule'},
   { path: 'form', component: FormComponent },
+  { path: 'reactiveform', component: ReactiveformComponent },
   FallbackRoute
 ];
 
