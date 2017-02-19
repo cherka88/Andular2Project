@@ -4,12 +4,20 @@
     <p class="mb-lg">Standard Bootstrap form and input controls with customized UI variations</p>
     <div class="card">
       <div class="card-body">
-        <form method="get" action="/" class="form-horizontal">
+        <pre>{{ f.value | json}}</pre>
+        <form method="get" action="/" class="form-horizontal" #f="ngForm">
           <fieldset>
-            <div class="form-group">
+            <div class="form-group" [ngClass]="{'has-error': name.invalid && name.dirty}">
               <label class="col-sm-2 control-label">Rounded Corners</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control rounded">
+                <input type="text" class="form-control rounded" name="name" ngModel required #name="ngModel">
+                <pre>touched: {{name.touched}}</pre>
+                <pre>untouched: {{name.untouched}}</pre>
+                <pre>dirty: {{name.dirty}}</pre>
+                <pre>pristine: {{name.pristine}}</pre>
+                <pre>valid: {{name.valid}}</pre>
+                <pre>invalid: {{name.invalid}}</pre>
+
               </div>
             </div>
           </fieldset>
