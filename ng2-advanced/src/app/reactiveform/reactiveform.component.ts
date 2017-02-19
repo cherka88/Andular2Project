@@ -19,7 +19,7 @@ export class ReactiveformComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    this.form.addControl('email', this.fb.control('default@example.com', Validators.required));
   }
 
 }
