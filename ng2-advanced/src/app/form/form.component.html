@@ -4,13 +4,15 @@
     <p class="mb-lg">Standard Bootstrap form and input controls with customized UI variations</p>
     <div class="card">
       <div class="card-body">
-        <pre>{{ f.controls.name?.invalid }}</pre>
+        <pre>{{ f.value | json}}</pre>
+        <pre>{{ f.valid | json}}</pre>
         <form method="get" action="/" class="form-horizontal" #f="ngForm" novalidate>
           <fieldset>
             <div class="form-group" [ngClass]="{'has-error': ids.invalid && ids.dirty}">
               <label class="col-sm-2 control-label">Rounded Corners</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control rounded" name="name" ngModel required #ids="ngModel">
+                <input type="text" class="form-control rounded" name="name" ngModel required minlength="3" #ids="ngModel">
+                <pre>touched: {{ids.errors | json}}</pre>
                 <pre>touched: {{ids.touched}}</pre>
                 <pre>untouched: {{ids.untouched}}</pre>
                 <pre>dirty: {{ids.dirty}}</pre>
@@ -21,19 +23,19 @@
               </div>
             </div>
           </fieldset>
-          <fieldset>
+          <fieldset ngModelGroup="group1" #group1="ngModelGroup">
             <div class="form-group">
               <label class="col-sm-2 control-label">With help</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control"><span class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
+                <input type="text" class="form-control" name="first" ngModel #first><span class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
               </div>
             </div>
           </fieldset>
-          <fieldset>
+          <fieldset ngModelGroup="group2" #group2="ngModelGroup">
             <div class="form-group">
               <label for="input-id-1" class="col-sm-2 control-label">Label focus</label>
               <div class="col-sm-10">
-                <input id="input-id-1" type="text" class="form-control">
+                <input id="input-id-1" type="text" class="form-control" name="second" [required]="!!first.value"  ngModel #second>
               </div>
             </div>
           </fieldset>
