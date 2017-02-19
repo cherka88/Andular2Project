@@ -1,5 +1,5 @@
 import {NgModel} from '@angular/forms';
-import { Input, Component, OnInit, ViewChild } from '@angular/core';
+import {ElementRef, ContentChild,  Input,   Component,   OnInit,   ViewChild} from '@angular/core';
 
 @Component({
   selector: 'app-sky',
@@ -16,4 +16,15 @@ export class SkyComponent implements OnInit {
   }
   @Input()
   name:string = 'sky';
+  @Input()
+  titleimg: string;
+
+  @ContentChild('btn')
+  btn: ElementRef;
+
+  getCounter() {
+    if(this.btn) {
+      console.log(this.btn.nativeElement.innerText);
+    }
+  }
 }
