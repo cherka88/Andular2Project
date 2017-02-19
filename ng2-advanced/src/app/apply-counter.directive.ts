@@ -1,11 +1,15 @@
-import {HostListener, HostBinding,  Directive} from '@angular/core';
+import {Input, HostListener,  HostBinding,   Directive} from '@angular/core';
 
 @Directive({
   selector: '[apply-counter]'
 })
 export class ApplyCounterDirective {
   @HostBinding('class.bg-success')
+  @Input()
   bgClass = false; //值一變，class即變
+
+
+
 
   @HostListener('click', ['$event'])
   myClick($event){

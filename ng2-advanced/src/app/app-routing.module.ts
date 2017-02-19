@@ -1,3 +1,4 @@
+import { LoginComponent } from './login/login.component';
 import { ReactiveformComponent } from './reactiveform/reactiveform.component';
 import { FormComponent } from './form/form.component';
 import { CardsComponent } from './cards/cards.component';
@@ -10,11 +11,17 @@ import { FallbackRoute } from './shared/fallback-route';
 import { ChartsModule } from './charts/charts.module'
 
 const routes: Routes = [
-  { path: 'dashboard', component: DashboardComponent },
-  { path: 'cards/:type', component: CardsComponent },
-  { path: 'charts/:username', loadChildren:'./charts/charts.module.ts#ChartsModule'},
-  { path: 'form', component: FormComponent },
-  { path: 'reactiveform', component: ReactiveformComponent },
+  {path:'', component:LayoutComponent,
+    children:[
+      { path: 'dashboard', component: DashboardComponent },
+      { path: 'cards/:type', component: CardsComponent },
+      { path: 'charts/:username', loadChildren:'./charts/charts.module.ts#ChartsModule'},
+      { path: 'form', component: FormComponent },
+      { path: 'reactiveform', component: ReactiveformComponent },
+      { path: 'login', component: LoginComponent }
+    ]
+  },
+  { path: 'login',  component: LoginComponent },
   FallbackRoute
 ];
 
