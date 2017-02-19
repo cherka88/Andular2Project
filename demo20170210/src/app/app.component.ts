@@ -11,6 +11,7 @@ export class AppComponent {
   inputHint = 'What needs to be done?';
   todos:any[] = [];
   todo:string;
+  // isEdit = false;
   constructor(public datasvc: DataService){
 
   }
@@ -25,7 +26,7 @@ export class AppComponent {
     //   value: item.value,
     //   isDone: false
     // });
-    this.todos = [...this.todos, { value:item.value, isDone:false }];
+    this.todos = [...this.todos, { value:item.value, isDone:false, isEdit:false }];
     item.value = '';
   }
   clearCompleted(){
@@ -42,6 +43,24 @@ export class AppComponent {
       return s;
     });
   }
-
+  edit(item){
+    // console.log(item.value);
+    item.isEdit = true;
+  }
+  stopEditing(item, editItem:string){
+    item.value = editItem;
+    item.isEdit = false;
+  }
+  updateEditing(item, editItem:string){
+    let _editItem:string = editItem;
+    item.isEdit = false;
+    if(_editItem.length === 0){
+      delete this.todos[item];
+    }
+    item.value = _editItem;
+  }
+  cancelEditing(item){
+    item.isEdit = false;
+  }
 
 }
