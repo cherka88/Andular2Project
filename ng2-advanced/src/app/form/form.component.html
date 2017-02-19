@@ -4,19 +4,19 @@
     <p class="mb-lg">Standard Bootstrap form and input controls with customized UI variations</p>
     <div class="card">
       <div class="card-body">
-        <pre>{{ f.value | json}}</pre>
-        <form method="get" action="/" class="form-horizontal" #f="ngForm">
+        <pre>{{ f.controls.name?.invalid }}</pre>
+        <form method="get" action="/" class="form-horizontal" #f="ngForm" novalidate>
           <fieldset>
-            <div class="form-group" [ngClass]="{'has-error': name.invalid && name.dirty}">
+            <div class="form-group" [ngClass]="{'has-error': ids.invalid && ids.dirty}">
               <label class="col-sm-2 control-label">Rounded Corners</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control rounded" name="name" ngModel required #name="ngModel">
-                <pre>touched: {{name.touched}}</pre>
-                <pre>untouched: {{name.untouched}}</pre>
-                <pre>dirty: {{name.dirty}}</pre>
-                <pre>pristine: {{name.pristine}}</pre>
-                <pre>valid: {{name.valid}}</pre>
-                <pre>invalid: {{name.invalid}}</pre>
+                <input type="text" class="form-control rounded" name="name" ngModel required #ids="ngModel">
+                <pre>touched: {{ids.touched}}</pre>
+                <pre>untouched: {{ids.untouched}}</pre>
+                <pre>dirty: {{ids.dirty}}</pre>
+                <pre>pristine: {{ids.pristine}}</pre>
+                <pre>valid: {{ids.valid}}</pre>
+                <pre>invalid: {{ids.invalid}}</pre>
 
               </div>
             </div>
